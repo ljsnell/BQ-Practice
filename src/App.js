@@ -2,10 +2,8 @@ import React, { Component } from 'react';
 import { Button } from 'reactstrap';
 import Select from 'react-select';
 
-// Deploy instructions
-// https://medium.com/better-programming/deploy-a-react-app-to-google-cloud-platform-using-google-app-engine-3f74fbd537ec
-// gcloud config set project quiz-driller
-// gcloud app deploy
+// Deploy instructions:
+// Use Heroku.
 class App extends Component {
   constructor(props) {
     super(props);
