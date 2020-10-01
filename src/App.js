@@ -32,11 +32,7 @@ class App extends Component {
     setInterval(() => this.startQuiz(),1000)
   }
 
-  getQuestion() {
-    this.setState({q_text_to_display: ""})
-    this.setState({i: 0})
-    this.setState({question: ""})
-    this.setState({data: ""})
+  getQuestion() {    
     // fetch('http://localhost:5000/filtered?qtype=' + this.state.qtype + '&books=1&chapters=' +
     //    this.state.selectedChapters)
     fetch('https://bq-questions-api.uc.r.appspot.com//filtered?qtype=' + this.state.qtype + '&books=1&chapters=' +
@@ -44,6 +40,10 @@ class App extends Component {
       .then(res => res.json()).then((data) => {
         console.log('question from api!')
         console.log(data)
+        this.setState({q_text_to_display: ""})
+        this.setState({i: 0})
+        this.setState({question: ""})
+        this.setState({data: ""})
         if(data != null) {
           this.setState({question: (data[9] + data[15])})
           this.setState({data: data})
