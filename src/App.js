@@ -35,8 +35,10 @@ class App extends Component {
   getQuestion() {
     this.setState({q_text_to_display: ""})
     this.setState({i: 0})
+    this.setState({question: ""})
+    this.setState({data: ""})
     // fetch('http://localhost:5000/filtered?qtype=' + this.state.qtype + '&books=1&chapters=' +
-    //  this.state.selectedChapters)
+    //    this.state.selectedChapters)
     fetch('https://bq-questions-api.uc.r.appspot.com//filtered?qtype=' + this.state.qtype + '&books=1&chapters=' +
       this.state.selectedChapters)
       .then(res => res.json()).then((data) => {
