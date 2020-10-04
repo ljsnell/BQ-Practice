@@ -3,7 +3,7 @@ import { Button } from 'reactstrap';
 import Select from 'react-select';
 
 // Deploy instructions:
-// Use Heroku.
+// Use Heroku. https://dashboard.heroku.com/apps/bq-driller
 class App extends Component {
   constructor(props) {
     super(props);
@@ -35,7 +35,7 @@ class App extends Component {
   getQuestion() {    
     // fetch('http://localhost:5000/filtered?qtype=' + this.state.qtype + '&books=1&chapters=' +
     //    this.state.selectedChapters)
-    fetch('https://bq-questions-api.uc.r.appspot.com//filtered?qtype=' + this.state.qtype + '&books=1&chapters=' +
+    fetch('https://bible-questions-api.herokuapp.com/filtered?qtype=' + this.state.qtype + '&books=1&chapters=' +
       this.state.selectedChapters)
       .then(res => res.json()).then((data) => {
         console.log('question from api!')
