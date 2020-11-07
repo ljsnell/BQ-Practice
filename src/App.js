@@ -40,19 +40,12 @@ class App extends Component {
       .then(res => res.json()).then((data) => {
         console.log('question from api!')
         console.log(data)
-        this.setState({q_text_to_display: ""})
-        this.setState({i: 0})
-        this.setState({question: ""})
-        this.setState({data: ""})
+        this.setState({q_text_to_display: "", i: 0, question: "", data: ""})
         if(data != null) {
-          this.setState({question: (data[9] + data[15])})
-          this.setState({data: data})
-          this.setState({answer: "🧐"})
+          this.setState({question: (data[9] + data[15]), data: data, answer: "🧐"})
           this.setState({question_array: this.state.question.split(" ")})
         } else {
-          this.setState({question: 'No question found for that criteria, FeelsBadMan'})
-          this.setState({answer: "😭"})
-          this.setState({data: data})
+          this.setState({question: 'No question found for that criteria, FeelsBadMan', answer: "😭", data: data})
         }
     });
   }
@@ -70,8 +63,7 @@ class App extends Component {
   }
 
   showFullQuestion() {
-    this.setState({q_text_to_display: this.state.question})
-    this.setState({i: this.state.question_array.length})
+    this.setState({q_text_to_display: this.state.question, i: this.state.question_array.length})
   }
     
   startQuiz() {
