@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button } from 'reactstrap';
 import Select from 'react-select';
+import Dictaphone from './Dictaphone'
 
 // Deploy instructions:
 // Use Heroku. https://dashboard.heroku.com/apps/bq-driller
@@ -101,6 +102,10 @@ class App extends Component {
         <Button onClick={()=>this.showFullQuestion()} variant="secondary">Full Question</Button>{' '}
         <Button onClick={()=>this.showAnswer()} variant="secondary">Show Answer</Button>{' '}
         <Button onClick={()=>this.jump()} variant="secondary">Jump</Button>{' '}        
+        </div>
+        <div>
+          <h3>Record your answer:</h3>
+        <Dictaphone></Dictaphone>
         </div>
         <div>
           Question Type:
